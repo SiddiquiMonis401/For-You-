@@ -1,0 +1,10 @@
+// Bootstrap theme documentation https://getbootstrap.com/docs/4.3/getting-started/theming/
+
+@import "variables";
+
+// Override default variables before the bootstrap.scss import
+$theme-colors: (
+  "primary": $primary,
+);
+
+@import '~bootstrap/scss/bootstrap.scss';

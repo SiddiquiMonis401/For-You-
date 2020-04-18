@@ -1,0 +1,29 @@
+# node_modules and bower_components are ignored by default.
+
+# Ignore dev libraries.
+
+# Test directories to ignore.
+/src/__test__
+*.test.js
+serviceWorker.js
+setupTests.js
+
+# Build directories
+/dist
+
+# OS generated files #
+/.vscode
+/.idea
+
+# Misc directories.
+/.settings
+/cache
+/server/credentials
+/src/trash
+*.config.js
+dependency-build/
+node_modules/
+
+
+*.stories.jsx
+
