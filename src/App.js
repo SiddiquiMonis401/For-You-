@@ -1,11 +1,18 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+
+// Routes
+import Routes from 'routes';
+
+// Components
+import { ErrorBoundary } from 'components/common';
 
 function App() {
   return (
-    <div className="App">
-      <Button>Test</Button>
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <Routes />
+      </div>
+    </ErrorBoundary>
   );
 }
 
