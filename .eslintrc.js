@@ -13,6 +13,7 @@ module.exports = {
 		'semi': ['error', 'always'],
 		'semi-spacing': 'error',
 		'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+		"import/prefer-default-export": "off",
 	},
 	"settings": {
 		"import/resolver": {
