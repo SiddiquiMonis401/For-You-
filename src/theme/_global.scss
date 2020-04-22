@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $primary-font-semi-bold;
+}
+button {
+  font-family: $primary-font-medium;
+}
+a {
+  font-family: $primary-font-semi-bold;
+}
+span, input, p {
+  font-family: $primary-font-regular;
+}
+input {
+  &::placeholder {
+    color: #A5A5A5;
+  }
+}
