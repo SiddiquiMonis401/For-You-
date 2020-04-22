@@ -3,13 +3,9 @@
 .login {
   .form-control {
     height: 44px;
-    color: #222222;
+    color: $text-n;
     font-size: 16px;
     padding: 9px 15px 6px 15px;
-    font-family: $primary-font-regular;
-    &::placeholder {
-      color: #A5A5A5;
-    }
   }
   button {
     height: 44px;

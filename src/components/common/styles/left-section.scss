@@ -1,4 +1,5 @@
 @import "../../../theme/variables";
+@import "../../../theme/typography";
 
 .bg-cover {
   background: url("../../../assets/images/left-section.png") no-repeat;
@@ -6,14 +7,10 @@
   background-size: cover;
   background-position: 100% 100%;
   h4 {
-    color: $primary-text;
+    color: $text-s;
     font-size: 28px !important;
-    font-family: $primary-font-semi-bold;
   }
   h1 {
-    color: $primary-text;
-    font-size: 64px !important;
-    font-family: $primary-font-semi-bold;
     &:before {
       content: "";
       height: 2px;
@@ -21,7 +18,7 @@
       bottom: -10px;
       position: absolute;
       display: inline-block;
-      background: $primary-text;
+      background: $text-s;
     }
   }
   p {
@@ -30,13 +27,11 @@
     color: #FDFDFD;
     font-size: 18px;
     line-height: 35px;
-    font-family: $primary-font-regular;
   }
   button {
     width: 150px;
     height: 44px;
-    color: $primary-text;
-    border-color: $primary-text;
-    font-family: $primary-font-medium;
+    color: $text-s;
+    border-color: $text-s;
   }
 }
