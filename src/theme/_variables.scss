@@ -1,3 +1,38 @@
+// fonts
+@font-face {
+  font-family: "volte-bold";
+  src: url('../assets/fonts/volte-bold.otf');
+}
+@font-face {
+  font-family: "volte-light";
+  src: url('../assets/fonts/volte-light.otf');
+}
+@font-face {
+  font-family: "volte-regular";
+  src: url('../assets/fonts/volte.otf');
+}
+@font-face {
+  font-family: "volte-semibold";
+  src: url('../assets/fonts/volte-semibold.otf');
+}
+@font-face {
+  font-family: "volte-medium";
+  src: url('../assets/fonts/volte-medium.otf');
+}
+
 // variables
 
+// colors
 $primary: #cb001a;
+
+// text-colors
+$text-p: #cb001a;
+$text-s: #ffffff;
+$text-n: #222222;
+
+// fonts family
+$primary-font-bold: "volte-bold", sans-serif;
+$primary-font-light: "volte-light", sans-serif;
+$primary-font-medium: "volte-medium", sans-serif;
+$primary-font-regular: "volte-regular", sans-serif;
+$primary-font-semi-bold: "volte-semibold", sans-serif;
