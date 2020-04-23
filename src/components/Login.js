@@ -22,7 +22,10 @@ function Login() {
 			<LeftSection />
 			<RightSection title="Login">
 				<Formik
-				  initialValues={{email:'', password:''}}
+				  initialValues={{
+		                           email:'', 
+		                           password:'',
+		                  }}
 				  validationSchema={Yup.object({
 					  email:Yup.string()
 					  .email('This is not an email')
