@@ -15,3 +15,71 @@ input {
     color: #A5A5A5;
   }
 }
+
+// media queries star here
+
+// large media query start here
+@media (min-width: 992px) and (max-width: 1199px) {
+  .bg-cover p {
+    width: 90%;
+  }
+  .right-section .s-heading {
+    font-size: 54px !important;
+  }
+}
+// large media query end here
+
+// medium media query start here
+@media (min-width: 768px) and (max-width: 991px) {
+  .bg-cover.pl-5 {
+    padding-left: 1rem !important;
+  }
+  .right-section {
+    min-width: inherit;
+  }
+  .bg-cover p {
+    width: 90%;
+  }
+  .right-section .s-heading {
+    font-size: 42px !important;
+  }
+}
+// medium media query end here
+
+// small media query start here
+@media (min-width: 576px) and (max-width: 767px) {
+  .hide-mobile-view {
+    display: none;
+  }
+  .full-mobile-view {
+    padding: 15px;
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+// small media query end here
+
+// extra small media query start here
+@media (min-width: 320px) and (max-width: 575px) {
+  .hide-mobile-view {
+    display: none;
+  }
+  .full-mobile-view {
+    padding: 15px;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .right-section {
+    width: 100%;
+    min-width: inherit;
+  }
+  .link-with-message {
+    font-size: 16px;
+  }
+  .right-section .s-heading {
+    font-size: 42px !important;
+  }
+}
+// extra small media query end here
+
+// media queries end here
