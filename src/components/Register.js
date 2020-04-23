@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 // Formik Import
-import { Formik, Form, Field, ErrorMessage, } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 // Yup Imports 
 import * as Yup from 'yup';
@@ -40,7 +40,7 @@ function Signup() {
 					   .required('Please enter the password'),
 					   confirmPassword:Yup.string()
 					   .required('please re-enter the password')
-					   .oneOf([Yup.ref('password')],'Password must match')
+					   .oneOf([Yup.ref('password')],'Password must match'),
 				   })}
 				   onSubmit={(value, {setSubmitting}) => {
 					   console.log(value);
