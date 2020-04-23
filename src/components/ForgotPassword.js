@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 // component
 
 // Formik
-import { Formik,Field,ErrorMessage,Form } from 'formik';
+import { Formik, Field, ErrorMessage, Form } from 'formik';
 
 // Yup
 import * as Yup from 'yup';
