@@ -4,7 +4,7 @@ export default {
 	props:{
 			hint: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			to: PropTypes.func.isRequired
+			to: PropTypes.string.isRequired
 		},
 	defaultProps: {}
 };
