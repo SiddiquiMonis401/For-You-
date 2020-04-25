@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-// import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 // util
 import { validation } from 'utils';
@@ -7,7 +6,7 @@ import { validation } from 'utils';
 // component
 import {
 	LeftSection,
-	// LinkWithMessage,
+	LinkWithMessage,
 	RightSection,
 	FormBuilder
 } from './common';
@@ -23,11 +22,21 @@ const FormBuilderProps = {
 		confirmPassword:'',
 	},
 	validationSchema: validation.signupValidation,
-	onSubmit(value, {setSubmitting}) {
+	onSubmit(value, { setSubmitting, resetForm }) {
 		console.log(value);
 		setSubmitting(false);
+		resetForm();
 	}
 };
+
+const formFields = [
+	{name: 'name', placeholder: 'Name'},
+	{name: 'email', placeholder: 'Email'},
+	{name: 'password', placeholder: 'Password', fieldProps: {type: 'password'}},
+	{name: 'confirmPassword', placeholder: 'Confirm password', fieldProps: {type: 'password'}}
+];
+
+const componentAfterButton = <LinkWithMessage hint="Already have account?" text="Sign In Now" to="/" />;
 
 function Signup() {
 	return (
@@ -37,7 +46,8 @@ function Signup() {
 				<FormBuilder
 					formikProps={FormBuilderProps}
 					buttonTitle="Signup"
-					formFields={[{name: 'name', placeholder: 'Name'}, {name: 'email', placeholder: 'Email'}, {name: 'password', placeholder: 'Password', fieldProps: {type: 'password'}}, {name: 'password', placeholder: 'Confirm password', fieldProps: {type: 'password'}}]}
+					formFields={formFields}
+					componentAfterButton={componentAfterButton}
 				/>
 			</RightSection>
 		</div>

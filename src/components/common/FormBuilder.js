@@ -5,6 +5,7 @@ import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import { FormBuilderProps } from 'props';
 
 /*
+   IMPORTANT: name must be same in all objects ie:(initialValues, formFields, etc)
 1. formikProps support all valid formik props which is describe here https://jaredpalmer.com/formik/docs/api/formik#props
 2. some formikProps are required ie:(initialValues, validationSchema, onSubmit)
 3. field props is describing the name of field for now we only support two formik fields which is "Field" and "FieldArray" pass as a string
@@ -25,7 +26,7 @@ function Map(arr, field) {
 					className={`form-control ${className}`}
 					{...fieldProps}
 				/>
-				<ErrorMessage name={name} />
+				<ErrorMessage component="small" name={name} />
 			</div>
 		);
 	});
