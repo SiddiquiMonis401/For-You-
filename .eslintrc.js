@@ -14,6 +14,7 @@ module.exports = {
 		'semi-spacing': 'error',
 		'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
 		"import/prefer-default-export": "off",
+		"react/jsx-props-no-spreading": "off",
 	},
 	"settings": {
 		"import/resolver": {
