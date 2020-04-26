@@ -48,10 +48,10 @@ input {
 
 // small media query start here
 @media (min-width: 576px) and (max-width: 767px) {
-  .hide-mobile-view {
+  .xs-sm-none {
     display: none;
   }
-  .full-mobile-view {
+  .xs-sm-100 {
     padding: 15px;
     width: 100% !important;
     height: auto !important;
@@ -61,10 +61,10 @@ input {
 
 // extra small media query start here
 @media (min-width: 320px) and (max-width: 575px) {
-  .hide-mobile-view {
+  .xs-sm-none {
     display: none;
   }
-  .full-mobile-view {
+  .xs-sm-100 {
     padding: 15px;
     width: 100% !important;
     height: auto !important;
