@@ -8,7 +8,7 @@ import {
 	LeftSection,
 	LinkWithMessage,
 	RightSection,
-	FormBuilder
+	FormBuilder,
 } from './common';
 
 // styles
