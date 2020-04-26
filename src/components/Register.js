@@ -32,8 +32,8 @@ const FormBuilderProps = {
 const formFields = [
 	{name: 'name', placeholder: 'Name'},
 	{name: 'email', placeholder: 'Email'},
-	{name: 'password', placeholder: 'Password', fieldProps: {type: 'password'}},
-	{name: 'confirmPassword', placeholder: 'Confirm password', fieldProps: {type: 'password'}}
+	{name: 'password', placeholder: 'Password', type: 'password'},
+	{name: 'confirmPassword', placeholder: 'Confirm password', type: 'password'}
 ];
 
 const componentAfterButton = <LinkWithMessage hint="Already have account?" text="Sign In Now" to="/" />;

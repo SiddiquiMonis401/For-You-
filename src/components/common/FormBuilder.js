@@ -10,21 +10,22 @@ import { FormBuilderProps } from 'props';
 2. some formikProps are required ie:(initialValues, validationSchema, onSubmit)
 3. field props is describing the name of field for now we only support two formik fields which is "Field" and "FieldArray" pass as a string
 4. if formFields object haven't component key FormBuilder use root field props which is describe on number 3
-5. formFields[index].fieldProps support all Field and FieldArray props
+5. formField's object support all Field and FieldArray props + className
    https://jaredpalmer.com/formik/docs/api/field#props || https://jaredpalmer.com/formik/docs/api/fieldarray
  */
 
-const Fields = { Field, FieldArray };
-function Map(arr, field) {
-	return arr.map(({name, className, placeholder, component, fieldProps}) => {
-		const FieldComponent = Fields[component || field];
+// form-builder supports the following fields
+const supportedFields = { Field, FieldArray };
+
+function fieldsMapper(formFields, field) {
+	return formFields.map(({name, component, className, ...rest}) => {
+		const FieldComponent = supportedFields[component || field];
 		return (
 			<div className="form-group w-100" key={name}>
 				<FieldComponent
 					name={name}
-					placeholder={placeholder}
 					className={`form-control ${className}`}
-					{...fieldProps}
+					{...rest}
 				/>
 				<ErrorMessage component="small" name={name} />
 			</div>
@@ -35,7 +36,7 @@ function Map(arr, field) {
 const FormBuilder = ({formikProps, field, formFields, buttonTitle, componentBeforeButton, componentAfterButton}) => (
 	<Formik {...formikProps}>
 		<Form>
-			{Map(formFields, field)}
+			{fieldsMapper(formFields, field)}
 			{componentBeforeButton}
 			<button type="submit" className="btn btn-primary w-100">{buttonTitle}</button>
 			{componentAfterButton}
