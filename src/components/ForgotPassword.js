@@ -9,7 +9,7 @@ import { LeftSection, RightSection, FormBuilder } from './common';
 // styles
 import './styles/forgot-password.scss';
 
-const formikProps = {
+const FormBuilderProps = {
 	initialValues:{email:''},
 	validationSchema:validation.forgotPasswordValidation,
 	onSubmit(value, { setSubmitting, resetForm }) {
@@ -19,14 +19,14 @@ const formikProps = {
 	}
 };
 
-const formFields=[{name:'email' ,placeholder:'Please enter email'}];
+const formFields=[{name: 'email' ,placeholder: 'Please enter email'}];
 
 function ForgotPassword() {
 	return (
 		<div className="d-flex forgot-password">
 			<LeftSection />
 			<RightSection title="Forgot Password">
-				<FormBuilder formikProps={formikProps} buttonTitle="Reset password" field="Field" formFields={formFields} />
+				<FormBuilder formikProps={FormBuilderProps} buttonTitle="Reset password" field="Field" formFields={formFields} />
 			</RightSection>
 		</div>
 	);
