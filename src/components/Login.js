@@ -14,12 +14,12 @@ import {
 // styles
 import './styles/login.scss';
 
-const formikProps={
+const formikProps = {
 	initialValues:{
-		email:'',
-		password:'',
+		email: '',
+		password: '',
 	},
-	validationSchema:validation.loginValidation,
+	validationSchema: validation.loginValidation,
 	onSubmit(value, { setSubmitting, resetForm }){
 		console.log(value);
 		setSubmitting(false);
@@ -29,21 +29,25 @@ const formikProps={
 };
 
 const formFields = [
-					{name:'email', placeholder:'Please enter your email', type:'email'},
-					{name:'password', placeholder:'Please enter the password', type:'password'},
+	{name: 'email', placeholder: 'Email', type: 'email'},
+	{name: 'password', placeholder: 'Password', type: 'password'},
 ];
 
-const componentBeforeButton = <LinkWithMessage hint="Don't have an account ?" text="Sign up" to="/register" />;
-const componentAfterButton = <LinkWithMessage hint="Forgot password ?" text="Reset" to="/forgot-password" />;
-                              
-    
-	
+const componentAfterButton = <LinkWithMessage hint="Don't have an account ?" text="Sign up" to="/register" />;
+const componentBeforeButton = <LinkWithMessage text="Forgot password" to="/forgot-password" />;
+
 function Login() {
 	return (
 		<div className="d-flex login">
 			<LeftSection />
 			<RightSection title="Login">
-				<FormBuilder formikProps={formikProps} buttonTitle="Login" formFields={formFields} componentAfterButton={componentAfterButton} componentBeforeButton={componentBeforeButton} />
+				<FormBuilder
+					formikProps={formikProps}
+					buttonTitle="Login"
+					formFields={formFields}
+					componentAfterButton={componentAfterButton}
+					componentBeforeButton={componentBeforeButton}
+				/>
 			</RightSection>
 		</div>
 	);
