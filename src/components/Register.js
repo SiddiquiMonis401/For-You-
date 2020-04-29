@@ -8,13 +8,13 @@ import {
 	LeftSection,
 	LinkWithMessage,
 	RightSection,
-	FormBuilder
+	FormBuilder,
 } from './common';
 
 // styles
 import './styles/signup.scss';
 
-const FormBuilderProps = {
+const formikProps = {
 	initialValues: {
 		name:'',
 		email:'',
@@ -44,7 +44,7 @@ function Signup() {
 			<LeftSection />
 			<RightSection title="Signup" withLogo={false}>
 				<FormBuilder
-					formikProps={FormBuilderProps}
+					formikProps={formikProps}
 					buttonTitle="Signup"
 					formFields={formFields}
 					componentAfterButton={componentAfterButton}
