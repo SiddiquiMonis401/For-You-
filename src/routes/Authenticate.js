@@ -5,11 +5,11 @@ import { Redirect } from 'react-router-dom';
 import PublicRoutes from './PublicRoutes';
 
 function Authenticate() {
-	return JSON.parse(localStorage.getItem('roles')) ? (
-		<Redirect to="/app" />
-	) : (
-		<PublicRoutes />
-	);
+  return JSON.parse(localStorage.getItem('roles')) ? (
+    <Redirect to="/app" />
+  ) : (
+    <PublicRoutes />
+  );
 }
 
 export default Authenticate;

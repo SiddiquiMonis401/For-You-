@@ -18,30 +18,30 @@ import { FormBuilderProps } from 'props';
 const supportedFields = { Field, FieldArray };
 
 function fieldsMapper(formFields, field) {
-	return formFields.map(({name, component, className, ...rest}) => {
-		const FieldComponent = supportedFields[component || field];
-		return (
-			<div className="form-group w-100" key={name}>
-				<FieldComponent
-					name={name}
-					className={`form-control ${className}`}
-					{...rest}
-				/>
-				<ErrorMessage component="small" name={name} />
-			</div>
-		);
-	});
+  return formFields.map(({name, component, className, ...rest}) => {
+    const FieldComponent = supportedFields[component || field];
+    return (
+      <div className="form-group w-100" key={name}>
+        <FieldComponent
+          name={name}
+          className={`form-control ${className}`}
+          {...rest}
+        />
+        <ErrorMessage component="small" name={name} />
+      </div>
+    );
+  });
 }
 
 const FormBuilder = ({formikProps, field, formFields, buttonTitle, componentBeforeButton, componentAfterButton}) => (
-	<Formik {...formikProps}>
-		<Form>
-			{fieldsMapper(formFields, field)}
-			{componentBeforeButton}
-			<button type="submit" className="btn btn-primary w-100">{buttonTitle}</button>
-			{componentAfterButton}
-		</Form>
-	</Formik>
+  <Formik {...formikProps}>
+    <Form>
+      {fieldsMapper(formFields, field)}
+      {componentBeforeButton}
+      <button type="submit" className="btn btn-primary w-100">{buttonTitle}</button>
+      {componentAfterButton}
+    </Form>
+  </Formik>
 );
 
 const { props, defaultProps } = FormBuilderProps;

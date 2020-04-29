@@ -8,10 +8,10 @@ import { LinkWithMessageProps } from 'props';
 import './styles/lint-with-message.scss';
 
 const LinkWithMessage = ({hint, text, to}) => (
-	<span className="d-flex w-100 mt-4 mb-4 justify-content-end link-with-message">
-		{hint}
-		<Link to={to} className="ml-2">{text}</Link>
-	</span>
+  <span className="d-flex w-100 mt-4 mb-4 justify-content-end link-with-message">
+    {hint}
+    <Link to={to} className="ml-2">{text}</Link>
+  </span>
 );
 
 const { props, defaultProps } = LinkWithMessageProps;

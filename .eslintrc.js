@@ -9,6 +9,10 @@ module.exports = {
 	],
 	'plugins': ['jsx-a11y', 'prettier'],
 	'rules': {
+		"indent": ["error", 2],
+		"react/jsx-indent": ["error", 2],
+		"react/jsx-indent-props": ["error", 2],
+		'key-spacing': ["error", { "mode": "strict" }],
 		'quotes': ['error', 'single', { 'allowTemplateLiterals': true }],
 		'semi': ['error', 'always'],
 		'semi-spacing': 'error',

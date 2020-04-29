@@ -9,14 +9,14 @@ import PrivateRoutes from './PrivateRoutes';
 
 
 function Routes() {
-	return (
-		<Router history={history}>
-			<Switch>
-				<Route path="/app" component={PrivateRoutes} />
-				<Route path="" render={Authenticate} />
-			</Switch>
-		</Router>
-	);
+  return (
+    <Router history={history}>
+      <Switch>
+        <Route path="/app" component={PrivateRoutes} />
+        <Route path="" render={Authenticate} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default Routes;

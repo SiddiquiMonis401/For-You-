@@ -5,13 +5,13 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { Dashboard } from 'components';
 
 const PrivateRoutes = () => {
-	return JSON.parse(localStorage.getItem('roles')) ? (
-		<Switch>
-			<Route path="/dashboard" component={Dashboard} />
-		</Switch>
-	) : (
-		<Redirect to="/" />
-	);
+  return JSON.parse(localStorage.getItem('roles')) ? (
+    <Switch>
+      <Route path="/dashboard" component={Dashboard} />
+    </Switch>
+  ) : (
+    <Redirect to="/" />
+  );
 };
 
 export default PrivateRoutes;
