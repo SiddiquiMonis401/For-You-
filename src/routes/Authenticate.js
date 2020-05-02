@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import PublicRoutes from './PublicRoutes';
 
 function Authenticate() {
-  return JSON.parse(localStorage.getItem('roles')) ? (
+  return true ? (
     <Redirect to="/app" />
   ) : (
     <PublicRoutes />
