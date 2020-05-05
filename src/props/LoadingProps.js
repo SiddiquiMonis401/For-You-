@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
+import { semiPrimary } from 'theme/colors';
 
 export default {
   props: {
-    align: PropTypes.oneOf(['left', 'center', 'right']),
-    size: PropTypes.number,
+    size: PropTypes.string, // xs, lg, 6x, etc
     color: PropTypes.string,
     visible: PropTypes.bool.isRequired
   },
   defaultProps: {
-    align: 'center',
-    size: 18,
-    color: '#cb001a'
+    size: 'lg',
+    color: semiPrimary
   }
 };

@@ -1,14 +1,13 @@
 import React, { memo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // props
 import { LoadingProps } from 'props';
 
-function Loading({ size: fontSize, color, visible, align }) {
+function Loading({ size, color, visible }) {
   return(
     visible &&
-      <span className={`text-${align}`}>
-        <i className="fas fa-spinner fa-spin" style={{fontSize, color}}/>
-      </span>
+    <FontAwesomeIcon icon="spinner" size={size} color={color} spin />
   );
 }
 
