@@ -5,7 +5,7 @@ import { Button as BootstrapButton } from 'react-bootstrap';
 import { ButtonProps } from 'props';
 
 // components
-import { Loading } from './index';
+import Loading from './Loading';
 
 // TODO: Add left right icon support.
 function Button({ loading, onClick, title, disabled, ...rest }) {
