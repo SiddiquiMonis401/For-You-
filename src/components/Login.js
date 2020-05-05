@@ -22,8 +22,10 @@ const formikProps = {
   validationSchema: validation.loginValidation,
   onSubmit(value, { setSubmitting, resetForm }){
     console.log(value);
-    setSubmitting(false);
-    resetForm();
+    setTimeout(() => {
+      setSubmitting(false);
+      resetForm();
+    }, 5000);
 
   }
 };
