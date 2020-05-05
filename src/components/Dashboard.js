@@ -178,7 +178,7 @@ function Dashboard() {
           </div>
         </Col>
       </Row>
-      <div className="user-overlay">
+      {false && <div className="user-overlay">
         <div className="user-list">
           <div className="clear-wrapper d-flex justify-content-end">
             <a href="#test">
@@ -288,7 +288,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </Container>
   );
 }
