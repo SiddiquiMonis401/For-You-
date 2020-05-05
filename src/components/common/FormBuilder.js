@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
+import { Button } from 'components/common';
 
 // props
 import { FormBuilderProps } from 'props';
@@ -35,12 +36,19 @@ function fieldsMapper(formFields, field) {
 
 const FormBuilder = ({formikProps, field, formFields, buttonTitle, componentBeforeButton, componentAfterButton}) => (
   <Formik {...formikProps}>
-    <Form>
-      {fieldsMapper(formFields, field)}
-      {componentBeforeButton}
-      <button type="submit" className="btn btn-primary w-100">{buttonTitle}</button>
-      {componentAfterButton}
-    </Form>
+    {({ isSubmitting, isValid }) =>  (
+      <Form>
+        {fieldsMapper(formFields, field)}
+        {componentBeforeButton}
+        <Button
+          type="submit"
+          title={buttonTitle}
+          loading={isSubmitting && isValid}
+          block
+        />
+        {componentAfterButton}
+      </Form>
+    )}
   </Formik>
 );
 

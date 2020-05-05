@@ -22,10 +22,13 @@
 
 // variables
 
+// IMPORTANT NOTE: When creating a new color variable it is mandatory to add that in color.js
 // colors
 $primary: #cb001a;
+$semi-primary: #ffffff;
 
 // text-colors
+// P = primary, S = secondary, N = neutral
 $text-p: #cb001a;
 $text-s: #ffffff;
 $text-n: #222222;
