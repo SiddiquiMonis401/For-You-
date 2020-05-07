@@ -92,7 +92,6 @@
   bottom: 0;
   display: flex;
   position: fixed;
-  padding-top: 72px;
   justify-content: flex-end;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -221,6 +220,17 @@
     .right-container {
       flex: 40;
       padding: 0 15px 0 30px;
+      div {
+        color: #3F3F3F;
+        font-size: 18px;
+        margin-bottom: 22px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        span {
+          font-family: $primary-font-semi-bold;
+        }
+      }
     }
   }
 }

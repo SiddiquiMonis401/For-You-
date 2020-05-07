@@ -62,7 +62,7 @@ function Dashboard() {
         </Col>
         <Col md="9" lg="10" className="p-0">
           <div className="content-area">
-            <div className="pt-4 d-flex justify-content-between align-items-center user-list">
+            <div className="pt-4 d-flex justify-content-between align-items-center mb-4">
               <h2 className="mb-0">Users List</h2>
               <Button variant="primary pt-2"> Add New</Button>
             </div>
