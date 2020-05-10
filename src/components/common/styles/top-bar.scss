@@ -1,0 +1,59 @@
+@import "../../../theme/variables";
+
+.navbar {
+  padding: 8px 20px !important;
+  box-shadow: 0 1px 3px 0 #cecece;
+  background-color: #F7F8FA !important;
+  .navbar-nav {
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+    .nav-link {
+      font-size: 18px;
+      color: $text-n !important;
+      font-family: $primary-font-medium;
+      .badge {
+        top: 10px;
+        width: 8px;
+        height: 8px;
+        right: 41px;
+        font-size: 0;
+        position: absolute;
+        border-radius: 50%;
+        background: #CB001B;
+        border: 1px solid white;
+      }
+    }
+    .bell-icon {
+      position: relative;
+      margin-right: 35px;
+      padding: 8px 40px !important;
+      border-left: 2px solid #E1E1E1;
+      border-right: 2px solid #E1E1E1;
+    }
+    .dropdown-toggle {
+      top: -7px;
+      position: relative;
+      padding: 8px 30px 8px 12px !important;
+      &:after {
+        right: 0;
+        top: 25px;
+        padding: 3px;
+        position: absolute;
+        border: solid #cb001b;
+        display: inline-block;
+        vertical-align: middle;
+        transform: rotate(45deg);
+        border-width: 0 2px 2px 0;
+      }
+    }
+    .user-id {
+      right: 52px;
+      bottom: 10px;
+      color: #3F3F3F;
+      font-size: 16px;
+      position: absolute;
+    }
+  }
+}
