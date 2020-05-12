@@ -7,3 +7,5 @@ export { default as FormBuilder } from './FormBuilder';
 export { default as Loading } from './Loading';
 export { default as Button } from './Button';
 export { default as TopBar } from './TopBar';
+export { default as Sidebar } from './Sidebar';
+export { default as ErrorMessage } from './ErrorMessage';
