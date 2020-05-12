@@ -6,8 +6,8 @@ export default {
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         className: PropTypes.string,
-        placeholder: PropTypes.string.isRequired,
-        component: PropTypes.string,
+        placeholder: PropTypes.string,
+        field: PropTypes.string,
         fieldProps: PropTypes.object
       })
     ).isRequired,

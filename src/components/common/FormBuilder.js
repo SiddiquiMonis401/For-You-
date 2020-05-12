@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
-import { Button } from 'components/common';
+import { Formik, Form, Field, FieldArray } from 'formik';
+import { Button, ErrorMessage } from 'components/common';
 
 // props
 import { FormBuilderProps } from 'props';
@@ -19,8 +19,8 @@ import { FormBuilderProps } from 'props';
 const supportedFields = { Field, FieldArray };
 
 function fieldsMapper(formFields, field) {
-  return formFields.map(({name, component, className, ...rest}) => {
-    const FieldComponent = supportedFields[component || field];
+  return formFields.map(({name, field: cField, className, ...rest}) => {
+    const FieldComponent = supportedFields[cField || field];
     return (
       <div className="form-group w-100" key={name}>
         <FieldComponent
@@ -28,7 +28,7 @@ function fieldsMapper(formFields, field) {
           className={`form-control ${className}`}
           {...rest}
         />
-        <ErrorMessage component="small" name={name} />
+        <ErrorMessage name={name} />
       </div>
     );
   });
