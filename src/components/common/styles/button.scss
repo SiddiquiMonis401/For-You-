@@ -1,0 +1,12 @@
+.btn {
+  &.btn-fab {
+    border-radius: 50%;
+    svg {
+      margin-bottom: -1px;
+    }
+  }
+  &.btn-fab.btn-sm {
+    width: 30px;
+    height: 30px;
+  }
+}
