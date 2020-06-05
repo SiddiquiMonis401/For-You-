@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Button as BootstrapButton } from 'react-bootstrap';
+import classNames from 'classnames';
 
 // props
 import { ButtonProps } from 'props';
@@ -7,11 +8,14 @@ import { ButtonProps } from 'props';
 // components
 import Loading from './Loading';
 
+// styles
+import './styles/button.scss';
+
 // TODO: Add left right icon support.
-function Button({ loading, onClick, title, disabled, ...rest }) {
+function Button({ loading, onClick, title, disabled, icon, fab, ...rest }) {
   return(
-    <BootstrapButton {...rest} disabled={disabled || loading} onClick={onClick}>
-      {loading ? <Loading visible /> : title}
+    <BootstrapButton {...rest} className={classNames({ 'btn-fab': fab })} disabled={disabled || loading} onClick={onClick}>
+      {loading ? <Loading visible /> : icon || title}
     </BootstrapButton>
   );
 }

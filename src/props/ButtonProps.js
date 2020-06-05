@@ -7,10 +7,14 @@ export default {
   props: {
     loading: PropTypes.bool,
     onClick: PropTypes.func,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    icon: PropTypes.node,
+    fab: PropTypes.bool,
   },
   defaultProps: {
 	  loading: false,
-    onClick: noop
+    onClick: noop,
+    title: '',
+    fab: false,
   }
 };
