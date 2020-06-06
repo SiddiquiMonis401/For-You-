@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 export default {
   props: {
@@ -8,15 +8,17 @@ export default {
         className: PropTypes.string,
         placeholder: PropTypes.string,
         field: PropTypes.string,
-        fieldProps: PropTypes.object
+        fieldProps: PropTypes.object,
+        renderAs: PropTypes.string,
+        selectOptions: PropTypes.arrayOf(PropTypes.string)
       })
     ).isRequired,
     field: PropTypes.oneOf(['Field', 'FieldArray']),
     buttonTitle: PropTypes.string.isRequired,
     componentBeforeButton: PropTypes.element,
-    componentAfterButton: PropTypes.element,
+    componentAfterButton: PropTypes.element
   },
   defaultProps: {
     field: 'Field'
   }
-};
+}

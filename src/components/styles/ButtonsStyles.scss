@@ -1,0 +1,11 @@
+@import '../../theme/variables';
+
+.btn-flat {
+  font-size: 1rem !important;
+  margin: 5px 0px;
+  background-color: $primary !important;
+  border-radius: 50% !important;
+  height: 40px !important;
+  width: 40px !important;
+  color: white !important;
+}

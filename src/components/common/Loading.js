@@ -1,18 +1,15 @@
-import React, { memo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { memo } from 'react'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 
 // props
-import { LoadingProps } from 'props';
+import { LoadingProps } from 'props'
 
-function Loading({ size, color, visible }) {
-  return(
-    visible &&
-    <FontAwesomeIcon icon="spinner" size={size} color={color} spin />
-  );
+function Loading ({ size, color, visible }) {
+  return visible && <AiOutlineLoading3Quarters />
 }
 
-const { props, defaultProps } = LoadingProps;
-Loading.propTypes = props;
-Loading.defaultProps = defaultProps;
+const { props, defaultProps } = LoadingProps
+Loading.propTypes = props
+Loading.defaultProps = defaultProps
 
-export default memo(Loading);
+export default memo(Loading)

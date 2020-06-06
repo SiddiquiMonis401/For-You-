@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { Formik, Form, Field, FieldArray } from 'formik';
-import { Button, ErrorMessage } from 'components/common';
+import React, { memo } from 'react'
+import { Formik, Form, Field, FieldArray } from 'formik'
+import { Button, ErrorMessage } from 'components/common'
 
 // props
-import { FormBuilderProps } from 'props';
+import { FormBuilderProps } from 'props'
 
 /*
    IMPORTANT: name must be same in all objects ie:(initialValues, formFields, etc)
@@ -16,32 +16,55 @@ import { FormBuilderProps } from 'props';
  */
 
 // form-builder supports the following fields
-const supportedFields = { Field, FieldArray };
+const supportedFields = { Field, FieldArray }
 
-function fieldsMapper(formFields, field) {
-  return formFields.map(({name, field: cField, className, ...rest}) => {
-    const FieldComponent = supportedFields[cField || field];
-    return (
-      <div className="form-group w-100" key={name}>
-        <FieldComponent
-          name={name}
-          className={`form-control ${className}`}
-          {...rest}
-        />
-        <ErrorMessage name={name} />
-      </div>
-    );
-  });
+function fieldsMapper (formFields, field) {
+  return formFields.map(
+    ({ name, field: cField, className, renderAs, selectOptions, ...rest }) => {
+      const FieldComponent = supportedFields[cField || field]
+      return (
+        <div className='form-group w-100' key={name}>
+          {renderAs === 'select' ? (
+            <FieldComponent
+              name={name}
+              className={`form-control ${className}`}
+              as={renderAs}
+            >
+              {selectOptions.map((items, i) => (
+                <option key={i}>{items}</option>
+              ))}
+            </FieldComponent>
+          ) : (
+            <>
+              <FieldComponent
+                name={name}
+                className={`form-control ${className}`}
+                {...rest}
+              />
+              <ErrorMessage name={name} />
+            </>
+          )}
+        </div>
+      )
+    }
+  )
 }
 
-const FormBuilder = ({formikProps, field, formFields, buttonTitle, componentBeforeButton, componentAfterButton}) => (
+const FormBuilder = ({
+  formikProps,
+  field,
+  formFields,
+  buttonTitle,
+  componentBeforeButton,
+  componentAfterButton
+}) => (
   <Formik {...formikProps}>
-    {({ isSubmitting, isValid }) =>  (
+    {({ isSubmitting, isValid }) => (
       <Form>
         {fieldsMapper(formFields, field)}
         {componentBeforeButton}
         <Button
-          type="submit"
+          type='submit'
           title={buttonTitle}
           loading={isSubmitting && isValid}
           block
@@ -50,10 +73,10 @@ const FormBuilder = ({formikProps, field, formFields, buttonTitle, componentBefo
       </Form>
     )}
   </Formik>
-);
+)
 
-const { props, defaultProps } = FormBuilderProps;
-FormBuilder.propTypes = props;
-FormBuilder.defaultProps = defaultProps;
+const { props, defaultProps } = FormBuilderProps
+FormBuilder.propTypes = props
+FormBuilder.defaultProps = defaultProps
 
-export default memo(FormBuilder);
+export default memo(FormBuilder)
