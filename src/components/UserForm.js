@@ -1,41 +1,55 @@
-import React, { memo } from 'react';
-import { GiCancel } from 'react-icons/gi';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { memo } from 'react'
+import { GiCancel } from 'react-icons/gi'
+import { useDispatch, useSelector } from 'react-redux'
+
+// Action Types
+import { ActionTypes } from '../redux/actions'
 
 // propTypes
-import { UserFormProps } from '../props';
+import { UserFormProps } from '../props'
 
 // components
-import { Button, Spacer, FormBuilder } from './common';
-import { validation } from '../utils';
+import { Button, Spacer, FormBuilder } from './common'
+import { validation } from '../utils'
 // styles
-import './styles/UserForm.scss';
+import './styles/UserForm.scss'
 
 function UserForm ({ onClick }) {
-  const dispatch =  useDispatch();
-  const userData = useSelector(state => state.UserReducer);
-  console.log(userData);
+  const { ADD_USER } = ActionTypes
+  const dispatch = useDispatch()
+  const userData = useSelector(state => state.UserReducer)
+  console.log(userData)
   const formikProps = {
     initialValues: {
       name: '',
       email: '',
       contactNumber: '',
-      clothType: 'Sherwani'
+      clothType: 'Sherwani',
+      clothColor: '',
+      clothSize: '',
+      clothNumber: ''
     },
     validationSchema: validation.UserFormValidation,
-    onSubmit (values , { setSubmitting,resetForm }) {
-      console.log(values);
-      dispatch({type:'Add_User',payload:values});
-      setSubmitting(false);
-      resetForm({});
+    onSubmit (values, { setSubmitting, resetForm }) {
+      console.log(values)
+      dispatch({ type: ADD_USER, payload: values })
+      setSubmitting(false)
+      resetForm({})
     }
   }
   const formFields = [
     { name: 'name', placeholder: 'Please enter the user name' },
     { name: 'email', placeholder: 'Please enter the user email' },
     { name: 'contactNumber', placeholder: 'Please enter the user contact' },
-    {name: 'clothType', renderAs: 'select', selectOptions:['Sherwani','Kurta']   }
-  ];
+    { name: 'clothNumber', placeholder: 'Please Enter cloth Number ' },
+    { name: 'clothColor', placeholder: 'Please Enter cloth color' },
+    { name: 'clothSize', placeholder: 'Please Enter cloth size ' },
+    {
+      name: 'clothType',
+      renderAs: 'select',
+      selectOptions: ['Sherwani', 'Kurta']
+    }
+  ]
 
   return (
     <div className='user-form'>
@@ -58,12 +72,12 @@ function UserForm ({ onClick }) {
         />
       </div>
     </div>
-  );
+  )
 }
 
-const { propTypes, defaultProps } = UserFormProps;
+const { propTypes, defaultProps } = UserFormProps
 
-UserForm.propTypes = propTypes;
-UserForm.defaultProps = defaultProps;
+UserForm.propTypes = propTypes
+UserForm.defaultProps = defaultProps
 
-export default memo(UserForm);
+export default memo(UserForm)

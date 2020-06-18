@@ -76,11 +76,24 @@ const clothTypeValidation = {
   clothType: Yup.string().oneOf(['Sherwani', 'Kurta'])
 };
 
+const clothColorValidation = {
+  clothColor: Yup.string().required('color of the clot is required')
+}; 
+const clothNumberValidation = {
+  clothNumber: Yup.string().required('number of the clot is required')
+}; 
+const clothSizeValidation = {
+  clothColor: Yup.string().required('color of the clot is required')
+}; 
+
 const UserFormValidation = Yup.object({
   ...nameValidation,
   ...emailValidation,
   ...contactNumberValidation,
-  ...clothTypeValidation
+  ...clothTypeValidation,
+  ...clothColorValidation,
+  ...clothNumberValidation,
+  ...clothSizeValidation
 });
 
 export default {

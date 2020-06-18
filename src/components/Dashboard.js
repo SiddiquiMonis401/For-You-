@@ -1,7 +1,7 @@
-import React, { memo, useState } from 'react'
-import { Button as BootstrapButton, Table, Form } from 'react-bootstrap'
-import { GiCancel } from 'react-icons/gi'
-import { useDisptach, useSelector } from 'react-redux'
+import React, { memo, useState } from 'react';
+import { Button as BootstrapButton, Table, Form } from 'react-bootstrap';
+import { GiCancel } from 'react-icons/gi';
+import { useSelector } from 'react-redux';
 
 // styles
 import './styles/ButtonsStyles.scss'
@@ -49,10 +49,12 @@ function Dashboard () {
               <th>User</th>
               <th>Cloth type</th>
               <th>Date</th>
+              <th>Phone No.</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
-            {userData.map(({ name, email, contactNumber, clothType, id }) => (
+            {userData.length>0 ? (userData.map(({ name, email, contactNumber, clothType, id }) => (
               <tr key={id}>
                 <td>
                   <div className='d-flex align-items-center'>
@@ -70,8 +72,19 @@ function Dashboard () {
                 <td>
                   <a href='#test'>{contactNumber}</a>
                 </td>
+                <td >
+                  {' '}
+                  <BootstrapButton variant='primary' onClick={()=>{
+                    setDisplayUserInfo(true)
+                    console.log(id);
+                    }}>Details</BootstrapButton>
+                </td>
               </tr>
-            ))}
+            ))):(
+              <>
+              <h6>You did not have any users now please add them</h6>
+              </>
+            )}
           </tbody>
         </Table>
       </div>
